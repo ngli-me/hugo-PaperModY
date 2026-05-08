@@ -2,7 +2,7 @@
 <h1>{{ .Title }}</h1>
 
 <div id="icons">
-{{ range $name, $icon := $.Site.Data.svg }}
+{{ range $name, $icon := $.Hugo.Data.svg }}
   <div class="item">
     <div class="icon">{{ safeHTML $icon }}</div>
     <div class="name">{{ $name }}</div>

@@ -7,7 +7,8 @@
     {{- trim .Content "\n" | markdownify -}}
   </section>
   <footer class="entry-footer">
-    {{- partial "social_icons.html" (dict "icons" site.Params.socialIcons "svg" $.Site.Data.svg "MaskedEmail" site.Params.MaskedEmail "Email" site.Params.Email) -}}
+    {{ $svgs := hugo.Data.svg }}
+    {{- partial "social_icons.html" (dict "icons" site.Params.socialIcons "svg" $svgs "MaskedEmail" site.Params.MaskedEmail "Email" site.Params.Author.Email) -}}
   </footer>
 </article>
 {{- end -}}
